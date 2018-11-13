@@ -1,5 +1,7 @@
 <template>
-  <text>我的</text>
+  <div class="list">
+    <navigator url="/pages/admin/addNews/main">发布一条信息</navigator>
+  </div>
 </template>
 
 <script>

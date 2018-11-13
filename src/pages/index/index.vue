@@ -1,15 +1,22 @@
 <template>
   <div>
-    <news-list/>
+    <news-list
+      v-for="item in lists"
+      :key="item.id"
+      :listItem="item"
+    />
   </div>
 </template>
 
 <script>
   import newsList from '@/components/newsList'
+  import methods from '../../utils/index'
 
   export default {
     data () {
-      return {}
+      return {
+        lists: []
+      }
     },
 
     components: {
@@ -19,19 +26,10 @@
     methods: {},
 
     created () {
-      wx.cloud.callFunction({
-        // 云函数名称
-        name: 'add',
-        // 传给云函数的参数
-        data: {
-          a: 1,
-          b: 2,
-        },
-      })
+      methods.cloudRequest('/index/getNewsList')
         .then(res => {
-          console.log(res.result) // 3
+          this.lists = res.list
         })
-        .catch(console.error)
     }
   }
 </script>

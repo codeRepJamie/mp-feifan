@@ -1,15 +1,23 @@
 <template>
   <div class="newsList">
-    <h1 class="title">大标题大标题大标题大标题</h1>
+    <h1 class="title">{{listItem.title}}</h1>
     <div class="subtitle">
-      <span class="author">曾小明</span>
-      <span class="time">1分钟前</span>
+      <span class="author">{{listItem.author}}</span>
+      <span class="time">{{formatTime}}</span>
     </div>
   </div>
 </template>
 
 <script>
+  import moment from 'moment';
+
   export default {
+    props: ['listItem'],
+    computed: {
+      formatTime () {
+        return moment(this.listItem.time).format('MM月DD日 hh:mm:ss')
+      }
+    }
   }
 </script>
 

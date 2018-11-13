@@ -1,3 +1,20 @@
+function cloudRequest (path = '') {
+  return new Promise((resolve, reject) => {
+    wx.cloud.callFunction({
+      name: 'router',
+      data: {
+        $url: path
+      }
+    }).then(({result}) => {
+      if (result.code === 0) {
+        resolve(result.data);
+      } else {
+        reject(new Error(result.errMsg))
+      }
+    }).catch(reject);
+  })
+}
+
 function formatNumber (n) {
   const str = n.toString()
   return str[1] ? str : `0${str}`
@@ -20,5 +37,6 @@ export function formatTime (date) {
 
 export default {
   formatNumber,
-  formatTime
+  formatTime,
+  cloudRequest
 }

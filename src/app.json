@@ -4,6 +4,14 @@
     "pages/profile/main",
     "pages/authorize/main"
   ],
+  "subPackages": [
+    {
+      "root": "pages/admin/",
+      "pages": [
+        "addNews/main"
+      ]
+    }
+  ],
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/main",
