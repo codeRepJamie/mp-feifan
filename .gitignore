@@ -1,0 +1,8 @@
+.DS_Store
+project.config.json
+typings/
+.idea
+.vscode/
+jsconfig.json
+/node_modules
+/build
