@@ -7,10 +7,12 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
+	"miniprogramRoot": "./",
+  "cloudfunctionRoot": "./static/cloud_function/",
 	"compileType": "miniprogram",
-	"appid": "	wx31c51d8ef17a7a6b",
+	"appid": "wx31c51d8ef17a7a6b",
 	"projectname": "mp-feifan",
+  "libVersion": "2.4.0",
 	"condition": {
 		"search": {
 			"current": -1,

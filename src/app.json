@@ -1,13 +1,23 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/profile/main",
+    "pages/authorize/main"
   ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/main",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/profile/main",
+      "text": "我的"
+    }]
+  },
+  "cloud": true,
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "非凡艺术合唱团",
     "navigationBarTextStyle": "black"
   }
 }
